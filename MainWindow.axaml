@@ -1,0 +1,114 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="SimplePmxVeldrid.MainWindow"
+        Title="Simple PMX Viewer"
+        Width="1120"
+        Height="720"
+        MinWidth="860"
+        MinHeight="540"
+        Background="#10141D">
+    <Grid ColumnDefinitions="300,*">
+        <Border Grid.Column="0" Background="#171D29" Padding="16">
+            <DockPanel LastChildFill="True">
+                <StackPanel DockPanel.Dock="Top" Spacing="12">
+                    <TextBlock Text="Simple PMX Viewer"
+                               Foreground="#F4F7FB"
+                               FontSize="24"
+                               FontWeight="SemiBold"/>
+                    <TextBlock Text="Avalonia UI + Veldrid"
+                               Foreground="#AAB4C5"
+                               TextWrapping="Wrap"/>
+
+                    <Button x:Name="OpenButton"
+                            Content="Open PMX File"
+                            FontSize="18"
+                            FontWeight="SemiBold"
+                            Padding="14"
+                            HorizontalAlignment="Stretch"
+                            Click="OpenButton_Click"/>
+
+                    <Button x:Name="ResetButton"
+                            Content="Reset View"
+                            Padding="10"
+                            HorizontalAlignment="Stretch"
+                            Click="ResetButton_Click"/>
+
+                    <Button x:Name="RenderButton"
+                            Content="Show Render Window"
+                            Padding="10"
+                            HorizontalAlignment="Stretch"
+                            Click="RenderButton_Click"/>
+
+                    <Button x:Name="OpenVmdButton"
+                            Content="Open VMD Motion"
+                            Padding="10"
+                            HorizontalAlignment="Stretch"
+                            Click="OpenVmdButton_Click"/>
+
+                    <Button x:Name="OpenAudioButton"
+                            Content="Open Audio / Video"
+                            Padding="10"
+                            HorizontalAlignment="Stretch"
+                            Click="OpenAudioButton_Click"/>
+                </StackPanel>
+
+                <StackPanel DockPanel.Dock="Bottom" Spacing="4">
+                    <TextBlock Text="Status" Foreground="#AAB4C5" FontWeight="SemiBold"/>
+                    <TextBlock x:Name="StatusText"
+                               Text="Ready"
+                               Foreground="#D8E2F0"
+                               TextWrapping="Wrap"/>
+                </StackPanel>
+
+                <StackPanel VerticalAlignment="Center" Spacing="8">
+                    <TextBlock x:Name="ModelNameText"
+                               Text="No model selected"
+                               Foreground="#FFFFFF"
+                               FontSize="18"
+                               FontWeight="SemiBold"
+                               TextWrapping="Wrap"/>
+                    <TextBlock x:Name="ModelStatsText"
+                               Text="Click Open Model File or drop a .pmx/.fbx model here. You can also open/drop a .vmd motion or .wav/.mp3/.mp4 audio."
+                               Foreground="#C8D2E2"
+                               TextWrapping="Wrap"/>
+                </StackPanel>
+            </DockPanel>
+        </Border>
+
+        <Border Grid.Column="1" Margin="1,0,0,0" Background="#0D111A">
+            <Grid>
+                <Border x:Name="RenderHost"
+                        Margin="24"
+                        Background="#111827"
+                        BorderBrush="#2F3A50"
+                        BorderThickness="1"
+                        CornerRadius="12">
+                    <StackPanel HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Spacing="14">
+                        <TextBlock Text="PMX Preview"
+                                   Foreground="#EAF2FF"
+                                   FontSize="24"
+                                   FontWeight="SemiBold"
+                                   HorizontalAlignment="Center"/>
+
+                        <Button x:Name="CenterOpenButton"
+                                Content="Open Model File"
+                                FontSize="22"
+                                FontWeight="SemiBold"
+                                Padding="24,14"
+                                HorizontalAlignment="Center"
+                                Click="OpenButton_Click"/>
+
+                        <TextBlock x:Name="RenderInfoText"
+                                   Text="Drop a .pmx/.fbx model, .vmd motion, or .wav/.mp3/.mp4 audio here.&#x0a;Controls: Space play/pause / Left drag rotate / Right drag pan / Wheel zoom / R reset&#x0a;Modes: 1 Texture / 2 Material / 3 Normal / 4 White&#x0a;Toggles: 0 Grid / 5 Alpha / 6 Shading / 7 Culling / 8 Outline / 9 Placement / B Background / Y GPU LBS / U Weight color / H GPU LBS debug"
+                                   Foreground="#AAB4C5"
+                                   TextWrapping="Wrap"
+                                   MaxWidth="640"
+                                   TextAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

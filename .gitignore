@@ -1,0 +1,16 @@
+# .NET build output
+[Bb]in/
+[Oo]bj/
+[Pp]ublish/
+
+# Local IDE and user-specific files
+.vs/
+.idea/
+*.user
+*.suo
+*.cache
+*.log
+
+# Local diagnostics and crash reports
+diagnostics/
+*.pdb
