@@ -14,3 +14,12 @@
 # Local diagnostics and crash reports
 diagnostics/
 *.pdb
+
+# User assets: check copyright and redistribution terms before sharing them.
+*.pmx
+*.pmd
+*.vmd
+*.fbx
+*.wav
+*.mp3
+*.mp4
